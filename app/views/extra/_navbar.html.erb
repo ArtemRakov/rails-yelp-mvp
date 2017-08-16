@@ -1,0 +1,27 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <img src="https://avatars0.githubusercontent.com/u/16181471?v=4&s=460" class="avatar">
+  </a>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
+
+    <!-- Profile picture with dropdown list -->
+    <% if current_user %>
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" aria-hidden="true" data-toggle="dropdown" id="navbar-wagon-menu"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+         <li><a href="#">Signed in as <%= current_user.name.capitalize %> </a> </li>
+         <li> <%= link_to "Logout", '/logout' %> </li>
+        </ul>
+      </div>
+    </div>
+    <% else %>
+      <%= link_to 'Login', '/login', class: "btn btn-default btn-mine " %>  <%= link_to 'Signup', '/signup', class: "btn btn-success btn-mine" %>
+    <% end %>
+  </div>
+</div>
